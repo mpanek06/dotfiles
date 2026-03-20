@@ -22,5 +22,12 @@ alias grhardocb='git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
 
 alias v='nvim'
 
-PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
+if [ -z "$ZSH_VERSION" ]; then
+    PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
+fi
+
+if [ -f ~/.bash_aliases_local ]; then
+    source ~/.bash_aliases_local
+fi
+
 
